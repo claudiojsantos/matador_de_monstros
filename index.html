@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Matador de Monstros - Curso VueJS</title>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="card">
+      <div class="container-adv">
+        <div class="jogador">
+          <h1>Jogador</h1>
+          <div class="progresso" :style="[style_jogador, {width: barra_width_jogador}]"></div>
+          <div class="rotulo_valor">
+            <h2>{{ valor_jogador }}%</h2>
+          </div>
+        </div>
+        <div class="monstro">
+          <h1>Monstro</h1>
+          <div class="progresso" :style="[style_monstro, {width: barra_width_monstro}]"></div>
+          <div class="rotulo_valor">
+            <h2>{{ valor_monstro }}%</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" id="div-resultado" v-if="fim">
+      <template v-if="valor_monstro <= 0">
+        <h1>Você ganhou!!!</h1>
+      </template>
+      <template v-else-if="valor_monstro == valor_jogador">
+        <h1>Empate!!!</h1>
+      </template>
+      <template v-else>
+        <h1>Você perdeu!!!</h1>
+      </template>
+    </div>
+    <div class="card">
+      <div class="container-acoes">
+        <template v-if="iniciar">
+          <button class="novo" @click="iniciar_jogo()">INICIAR NOVO JOGO</button>
+        </template>
+        <template v-else>
+          <button class="ataque" @click="ataque()">ATAQUE</button>
+          <button class="ataque-especial" @click="ataque_especial()">ATAQUE ESPECIAL</button>
+          <button class="curar" @click="curar()">CURAR</button>
+          <button class="desistir" @click="desistir()">DESISTIR</button>
+        </template>
+      </div>
+    </div>
+    <div class="card" v-if="log">
+      <div class="container-logs">
+        <template v-for="log in logs">
+          <div class="log_monstro">
+            <h2>MONSTRO {{ log.monstro }}</h2>
+          </div>
+          <div class="log_jogador">
+            <h2>JOGADOR {{ log.jogador }}</h2>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

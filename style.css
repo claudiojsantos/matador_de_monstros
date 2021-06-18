@@ -1,0 +1,130 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.container-adv {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.jogador {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+  width: 50%;
+}
+
+.jogador > h1 {
+  text-align: center;
+}
+
+.rotulo_valor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progresso {
+  align-items: left;
+  width: 100%;
+  height: 20px;
+  background-color: green;
+  border: none;
+}
+
+.monstro {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+  width: 50%;
+}
+
+.monstro > h1 {
+  text-align: center;
+}
+
+.container-acoes {
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#div-resultado {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  padding: 30px 30px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.novo {
+  width: 40%;
+  background-color: blue;
+  color: white;
+  font-weight: bolder;
+  padding: 10px 10px;
+  border: none;
+}
+
+.ataque {
+  width: 20%;
+  background-color: red;
+  color: white;
+  font-weight: bolder;
+  padding: 10px 10px;
+  border: none;
+}
+
+.ataque-especial {
+  width: 20%;
+  background-color: orange;
+  color: white;
+  font-weight: bolder;
+  padding: 10px 10px;
+  border: none;
+}
+
+.curar {
+  width: 20%;
+  background-color: green;
+  color: white;
+  font-weight: bolder;
+  padding: 10px 10px;
+  border: none;
+}
+
+.desistir {
+  width: 20%;
+  background-color: rgb(175, 175, 175);
+  color: black;
+  font-weight: bolder;
+  padding: 10px 10px;
+  border: none;
+}
+
+.container-logs {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-logs > div {
+  width: 100%;
+  margin: 10px 10px;
+  padding: 0px 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.log_monstro {
+  background-color: red;
+  color: white;
+}
+
+.log_jogador {
+  background-color: blue;
+  color: white;
+}
